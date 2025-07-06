@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>444eggs</title>
   <style>
     body {
       background-color: black;
       margin: 0;
-      padding: 40px 0;
+      padding: 0;
     }
 
-    img {
+    .gallery img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
       display: block;
-      max-width: 80%;
-      margin: 60px auto;
+      margin: 0 auto;
       cursor: pointer;
     }
 
@@ -25,7 +27,7 @@
       background-color: black;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999;
     }
 
     #overlayText {
@@ -38,9 +40,9 @@
 <body>
 
   <div class="gallery">
-    <img src="IMG_6730.jpg" alt="box1" onclick="showMessage('1%')" />
-    <img src="IMG_6731.jpg" alt="box2" onclick="showMessage('2%')" />
-    <img src="IMG_6732.jpg" alt="box3" onclick="showMessage('3%')" />
+    <img src="IMG_6730.jpg" onclick="showMessage('1%')">
+    <img src="IMG_6731.jpg" onclick="showMessage('2%')">
+    <img src="IMG_6732.jpg" onclick="showMessage('3%')">
   </div>
 
   <div id="overlay" onclick="hideMessage()">
@@ -60,3 +62,4 @@
 
 </body>
 </html>
+
