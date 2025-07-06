@@ -9,16 +9,54 @@
       margin: 0;
       padding: 40px 0;
     }
+
     img {
       display: block;
       max-width: 80%;
       margin: 60px auto;
+      cursor: pointer;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: black;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #overlayText {
+      color: white;
+      font-size: 40px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <img src="IMG_6730.jpg" alt="" />
-  <img src="IMG_6731.jpg" alt="" />
-  <img src="IMG_6731.jpg" alt="" />
+
+  <div class="gallery">
+    <img src="IMG_6730.jpg" alt="box1" onclick="showMessage('1%')" />
+    <img src="IMG_6731.jpg" alt="box2" onclick="showMessage('2%')" />
+    <img src="IMG_6732.jpg" alt="box3" onclick="showMessage('3%')" />
+  </div>
+
+  <div id="overlay" onclick="hideMessage()">
+    <span id="overlayText"></span>
+  </div>
+
+  <script>
+    function showMessage(text) {
+      document.getElementById('overlayText').innerText = text;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function hideMessage() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
